@@ -15,7 +15,7 @@ before_script:
 - docker pull smesch/hugo
 - docker pull smesch/html-proofer
 - docker pull smesch/kubectl
-- docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
+- docker login -e "${DOCKER_EMAIL}" -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
 
 script:
 - docker run -v ${TRAVIS_BUILD_DIR}:/hugo_root smesch/hugo hugo -s /hugo_root
